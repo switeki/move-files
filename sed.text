@@ -1,0 +1,10 @@
+=LET(
+  txt, A1,
+  old, {"x","y","z"},
+  new, {"1","2","3"},
+  REDUCE(
+    txt,
+    SEQUENCE(ROWS(old)),
+    LAMBDA(acc, i, SUBSTITUTE(acc, INDEX(old, i), INDEX(new, i)))
+  )
+)
